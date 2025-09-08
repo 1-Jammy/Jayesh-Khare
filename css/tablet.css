@@ -1,0 +1,9 @@
+#fullname {
+    font-size: 10vw;
+}
+
+#horizontal-line{
+    right: 50%;
+    width: 50%;
+    transform: translateX(50%);
+} 

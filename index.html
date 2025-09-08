@@ -4,66 +4,106 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Jayesh Khare</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/tablet.css" media="only screen and (max-width: 1186px)">
+        <link rel="stylesheet" href="css/mobile.css" media="only screen and (max-width: 600px)">
+
     </head>
+
     <body>
-        <section id="hero-section">
-            
-            <div class="introduction">
-                <div id="i-am">I'm</div>
-                <div id="name">
-                    <span id="short-name">Jay</span>esh<br><span id="surname">Khare.</span>
+        <section class="hero-section">
+            <a href="#projects" class="scroll-cue" aria-label="Scroll to projects">
+                <div class="scroll-cue-bg"></div>
+                <div class="scroll-cue-icon"></div>
+            </a>
+
+            <div class="scrolling-text-container">
+                <div class="scrolling-text-item-wrapper" id="scrolling-text-one" style="--direction:scroll-left"
+                    role="marquee">
+                    ~ <div class="scrolling-text-item">Bonjour</div>
+                    ~ <div class="scrolling-text-item">Nice to meet you</div>
+                    ~ <div class="scrolling-text-item">Ciao</div>
+                    ~ <div class="scrolling-text-item">Hi</div>
+                    ~ <div class="scrolling-text-item">नमस्ते</div>
+                    ~ <div class="scrolling-text-item">Have a nice Day!</div>
+                    ~ <div class="scrolling-text-item">Hello There</div>
+
+                    ~ <div class="scrolling-text-item">Bonjour</div>
+                    ~ <div class="scrolling-text-item">Nice to meet you</div> :D
+                    ~ <div class="scrolling-text-item">Ciao</div>
+                    ~ <div class="scrolling-text-item">Hi</div>
+                    ~ <div class="scrolling-text-item">नमस्ते</div>
+                    ~ <div class="scrolling-text-item">Have a nice Day!</div>
+                    ~ <div class="scrolling-text-item">Hello There</div>
+                </div>
+
+                <div class="scrolling-text-item-wrapper" id="scrolling-text-two" style="--direction:scroll-right;"
+                    role="marquee">
+                    ~ <div class="scrolling-text-item">Bonjour</div>
+                    ~ <div class="scrolling-text-item">Nice to meet you</div>
+                    ~ <div class="scrolling-text-item">Ciao</div>
+                    ~ <div class="scrolling-text-item">Hi</div>
+                    ~ <div class="scrolling-text-item">नमस्ते</div>
+                    ~ <div class="scrolling-text-item">Have a nice Day!</div>
+                    ~ <div class="scrolling-text-item">Hello There</div>
+
+                    ~ <div class="scrolling-text-item">Bonjour</div>
+                    ~ <div class="scrolling-text-item">Nice to meet you</div>
+                    ~ <div class="scrolling-text-item">Ciao</div>
+                    ~ <div class="scrolling-text-item">Hi</div>
+                    ~ <div class="scrolling-text-item">नमस्ते</div>
+                    ~ <div class="scrolling-text-item">Have a nice Day!</div>
+                    ~ <div class="scrolling-text-item">Hello There</div>
                 </div>
             </div>
 
-            <div class="marquee-container marquee-one">
-                <div class="marquee-track">
-                    <span>Hello There</span> :P
-                    <span>Hi</span>
-                    <span>Bonjour</span>
-                    <span>Have a nice Day!</span>
-                    <span>Namaste</span>
-                    <span>Nice to meet you</span>
-                    <span>Ciao</span>
-                
-                    <span>Hello There</span>
-                    <span>Hi</span>
-                    <span>Bonjour</span>
-                    <span>Have a nice Day!</span>
-                    <span>Namaste</span>
-                    <span>Nice to meet you</span>
-                    <span>Ciao</span>
+            <div id="introduction-container">
+                <div id="name-container">
+
+                    <span id="i-am-text">I am</span><br>
+
+                    <div id="fullname">
+                        <span id="short-name"class="isAnimated">Jay</span>esh<br><span id="surname">Khare.</span>
+                    </div>
+                </div>
+
+                <div id="logo-container">
+                    <div id="line"></div>
+                    <div id="x-one"></div>
+                    <div id="x-two"></div>
+                    <div id="horizontal-line"></div>
+                    <span id="logo-file-name">pfp_final_final.png</span>
+                    <img id="logo" src="assets/logo.png" alt="Jayesh Khare pfp">
+                    <div class="little-square" id="little-square-top-left"></div>
+                    <div class="little-square" id="little-square-top-right"></div>
+                    <div class="little-square" id="little-square-bottom-left"></div>
+                    <div class="little-square" id="little-square-bottom-right"></div>
+                    <img id="cursor" src="assets/cursor-export-svg.svg" alt="mouse_cursor">
                 </div>
             </div>
-
-            <div class="marquee-container marquee-two">
-                <div class="marquee-track reverse">
-                    <span>नमस्ते</span>
-                    <span>Bonjour</span>
-                    <span>Nice to meet you</span>
-                    <span>Ciao</span>
-                    <span>Have a nice Day!</span>
-                    <span>Hi</span>
-                    <span>Hello There</span>
-                    
-                    <span>नमस्ते</span>
-                    <span>Bonjour</span>
-                    <span>Nice to meet you</span>
-                    <span>Ciao</span>
-                    <span>Hi</span>
-                    <span>Have a nice Day!</span>
-                    <span>Hello There</span>
-                </div>
-            </div>
-
-            <div class="about">an aspiring and soon to be UI Designer/Product designer with a love for simplicity ;)</div>
+                <div id="about-myself">an aspiring and soon to be UI designer with a love for simplicity ;)</div>
         </section>
+
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var cue = document.querySelector('.scroll-cue');
+                var target = document.querySelector('#projects');
+                if (cue && target) {
+                    cue.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                }
+            });
+        </script>
     </body>
+    
 </html>
