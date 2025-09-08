@@ -1,9 +1,13 @@
 #fullname {
-    font-size: 10vw;
+    font-size: 14vw;
+}
+
+#i-am-text{
+    font-size: 4.6vw;
 }
 
 #horizontal-line{
-    right: 50%;
+    right: 25%;
     width: 50%;
-    transform: translateX(50%);
+    transform: translateX(0%);
 } 
