@@ -1,0 +1,332 @@
+:root {
+
+    --navbar-height: 68px;
+
+
+    --seperator: hsl(235, 12%, 24%);
+    --background: #00000A;
+    --text-primary: #F5F5FF;
+    --text-secondary: #C4C4CE;
+    --primary-btn: #1C58FE;
+    --primary-btn-hover: #5784FE;
+    --on-primary: #F5F5FF;
+    --pattern-slanted-line: #B8E1FF;
+    --pattern-dots: #64676D;
+    --nav-bar: #141419;
+
+
+    --space-between-sections: clamp(100px, 18vh, 250px);
+
+    --vert-pattern-width: 4px;
+    --padding-small: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    width: 0;
+}
+
+html::-webkit-scrollbar-track-piece {
+    width: 0px;
+}
+
+* {
+
+    color: var(--text-secondary);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 100;
+    font-family: 'Outfit', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: var(--navbar-height);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--seperator);
+    z-index: 10;
+    padding: 8px;
+
+    background-color: var(--nav-bar);
+}
+
+#navbar-image {
+    content: url(assets/navbar-image.gif);
+    aspect-ratio: 1;
+    padding: 4px;
+    border-radius: 100px;
+}
+
+#theme-toggle {
+    background-color: var(--nav-bar);
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 0;
+}
+
+#theme-toggle:hover {
+    background-color: var(--seperator);
+}
+
+#navbar-links {
+    display: none;
+    height: 100%;
+    margin-left: 24px;
+}
+
+#navbar-links a {
+    padding: 8px;
+    aspect-ratio: 2/0.8;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    font-weight: 100;
+    color: var(--text-primary);
+}
+
+#navbar-links a:hover {
+    border-bottom: 1px solid var(--text-primary);
+    font-weight: 400;
+}
+
+#btn-scroll-to-top {
+    display: flex;
+    position: fixed;
+    width: 62px;
+    aspect-ratio: 1;
+    right: 5vw;
+    bottom: 5dvh;
+    border: 1px solid var(--seperator);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    background: var(--nav-bar);
+    z-index: 10;
+    transition: all 0.1s ease-in;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+}
+
+#btn-scroll-to-top:hover {
+    background: var(--seperator);
+}
+
+section {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--space-between-sections) 0;
+}
+
+section .section-title {
+    position: absolute;
+    align-self: flex-start;
+    align-content: flex-end;
+    text-align: end;
+    width: calc(10vw - var(--vert-pattern-width));
+    font-family: 'Space Grotesk';
+    font-weight: 300;
+    font-size: 1.4rem;
+
+    writing-mode: sideways-lr;
+    padding: 4px 0;
+}
+
+section .content {
+    position: relative;
+    width: 100%;
+    padding: 0 calc(10vw + var(--padding-small));
+    border-top: 1px solid var(--seperator);
+    border-bottom: 1px solid var(--seperator);
+}
+
+#vertical-pattern-container {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    justify-content: center;
+    gap: 80vw;
+    pointer-events: none;
+    z-index: 9;
+}
+
+#vertical-pattern {
+    width: var(--vert-pattern-width);
+    background-color: var(--seperator);
+}
+
+#projects-container {
+    display: grid;
+    padding: 8px 0;
+    gap: 8px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.project {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16/9;
+    backdrop-filter: blur(1.5px);
+    border: 1px solid var(--seperator);
+    transition: all 0.02s ease-in-out;
+}
+
+.project:hover {
+    box-shadow: 0 8px 0px rgba(0, 0, 0, 0.5);
+    translate: 0 -4px;
+}
+
+.project a img {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+#wip::before {
+    padding: 0 18px;
+    content: 'WIP';
+    border: 10px solid transparent;
+    border-image: url('assets/wip_border.png') 9 round;
+}
+
+#connect-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.connect-option {
+    display: flex;
+    padding: 8px 0;
+    gap: 8px;
+    align-items: center;
+}
+
+.connect-option .icon {
+    display: flex;
+    width: 40px;
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav-bar);
+}
+
+#greeting-text {
+    font-weight: 400;
+    font-size: clamp(1.4rem, calc(2vw + 1.2rem), 4rem);
+}
+
+#name {
+    color: var(--text-primary);
+    font-family: 'Space Grotesk';
+    font-weight: 700;
+    font-size: clamp(5rem, calc(9vw + 1rem), 10rem);
+}
+
+#extra-text {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    font-size: clamp(1.6rem, calc(1vw + 1rem), 2.2rem);
+}
+
+#btn-download-resume {
+    
+    background-color: var(--primary-btn);
+    border: none;
+    opacity: 0.3;
+    color: var(--on-primary);
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding: 16px 32px;
+    cursor: not-allowed;
+}
+
+.content p {
+    font-size: clamp(1.2rem, calc(1vw + 1rem), 1.6rem);
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    width: 10vw;
+    height: 100%;
+    left: 0;
+    background-color: #1C58FE;
+    -webkit-mask-image: url('assets/pattern_slanted_lines.svg');
+    mask-image: url('assets/pattern_slanted_lines.svg');
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-size: auto;
+    mask-size: auto;
+    -webkit-mask-position: center;
+    mask-position: center;
+    opacity: 0.5;
+
+    /* color for your pattern */
+    background-color: var(--pattern-dots);
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    width: 10vw;
+    height: 100%;
+    right: 0;
+    background-color: #1C58FE;
+    -webkit-mask-image: url('assets/pattern_slanted_lines.svg');
+    mask-image: url('assets/pattern_slanted_lines.svg');
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-size: auto;
+    mask-size: auto;
+    -webkit-mask-position: center;
+    mask-position: center;
+    opacity: 0.5;
+
+    /* color for your pattern */
+    background-color: var(--pattern-dots);
+}
+
+.patterned-bg::before {
+    content: 'TEST';
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    width: 80vw;
+    height: 100%;
+
+
+    -webkit-mask-image: url('assets/pattern_dots.svg');
+    mask-image: url('assets/pattern_dots.svg');
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-size: auto;
+    mask-size: auto;
+    -webkit-mask-position: center;
+    mask-position: center;
+    opacity: 0.3;
+
+    background-color: var(--pattern-dots);
+}
+
+@media (min-width:1000px) {
+
+    #projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
