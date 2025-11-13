@@ -1,32 +1,38 @@
 :root {
-
     --navbar-height: 68px;
-
-
-    --seperator: hsl(235, 12%, 24%);
-    --background: #00000A;
-    --text-primary: #F5F5FF;
-    --text-secondary: #C4C4CE;
-    --primary-btn: #1C58FE;
-    --primary-btn-hover: #5784FE;
-    --on-primary: #F5F5FF;
-    --pattern-slanted-line: #B8E1FF;
-    --pattern-dots: #64676D;
-    --nav-bar: #141419;
-
-
     --space-between-sections: clamp(100px, 18vh, 250px);
-
     --vert-pattern-width: 4px;
     --padding-small: 8px;
 }
 
-html::-webkit-scrollbar-track {
-    width: 0;
+[data-theme="light"] {
+    --seperator: hsl(224, 15%, 45%);
+    --background: hsl(240, 100%, 98%);
+    --text-primary: hsl(0, 0%, 0%);
+    --text-secondary: hsl(0, 0%, 0%);
+    --pattern-slanted-line: hsl(205, 100%, 5%);
+    --pattern-dots: hsl(0, 0%, 30%);
+    --navbar: hsl(240, 100%, 100%);
+    --primary-btn: hsl(224, 87%, 60%);
+    --primary-btn-hover:  hsl(224, 87%, 70%);
+    --on-primary: hsl(240, 100%, 98%);
 }
 
-html::-webkit-scrollbar-track-piece {
-    width: 0px;
+[data-theme="dark"] { 
+    --seperator: hsl(235, 12%, 17%);
+    --background: hsl(240, 100%, 2%);
+    --text-primary: hsl(240, 100%, 98%);
+    --text-secondary: hsl(240, 10%, 80%);
+    --pattern-slanted-line: hsl(205, 100%, 20%);
+    --pattern-dots: hsl(216, 5%, 40%);
+    --navbar: hsl(240, 10%, 10%);
+    --primary-btn: hsl(224, 87%, 50%);
+    --primary-btn-hover:  hsl(224, 87%, 70%);
+    --on-primary: hsl(240, 100%, 98%);
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 * {
@@ -53,7 +59,7 @@ nav {
     z-index: 10;
     padding: 8px;
 
-    background-color: var(--nav-bar);
+    background-color: var(--navbar);
 }
 
 #navbar-image {
@@ -64,7 +70,7 @@ nav {
 }
 
 #theme-toggle {
-    background-color: var(--nav-bar);
+    background-color: var(--navbar);
     height: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -106,7 +112,7 @@ nav {
     border: 1px solid var(--seperator);
     border-radius: 8px;
     color: var(--text-secondary);
-    background: var(--nav-bar);
+    background: var(--navbar);
     z-index: 10;
     transition: all 0.1s ease-in;
 
@@ -226,7 +232,7 @@ section .content {
     aspect-ratio: 1;
     justify-content: center;
     align-items: center;
-    background-color: var(--nav-bar);
+    background-color: var(--navbar);
 }
 
 #greeting-text {
@@ -248,7 +254,7 @@ section .content {
 }
 
 #btn-download-resume {
-    
+
     background-color: var(--primary-btn);
     border: none;
     opacity: 0.3;
