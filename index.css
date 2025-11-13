@@ -171,23 +171,25 @@ section .content {
     display: grid;
     padding: 8px 0;
     gap: 8px;
+    justify-content: center;
     grid-template-columns: repeat(1, 1fr);
 }
 
 .project {
+    box-sizing: border-box;
     display: flex;
     width: 100%;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     aspect-ratio: 16/9;
     backdrop-filter: blur(1.5px);
-    border: 1px solid var(--seperator);
-    transition: all 0.02s ease-in-out;
+    transition: all 0.05s ease-in-out;
+    outline: 2px solid var(--seperator);
 }
 
 .project:hover {
-    box-shadow: 0 8px 0px rgba(0, 0, 0, 0.5);
-    translate: 0 -4px;
+    outline-color: #f5f5ffAF;
 }
 
 .project a img {
@@ -202,6 +204,7 @@ section .content {
     content: 'WIP';
     border: 10px solid transparent;
     border-image: url('assets/wip_border.png') 9 round;
+    font-size: clamp(1.2rem, calc(1vw + 1rem), 1.6rem);
 }
 
 #connect-container {
@@ -303,7 +306,7 @@ section::after {
 }
 
 .patterned-bg::before {
-    content: 'TEST';
+    content: '';
     position: absolute;
     top: 0;
     left: 10vw;
