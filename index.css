@@ -3,32 +3,35 @@
     --space-between-sections: clamp(100px, 18vh, 250px);
     --vert-pattern-width: 4px;
     --padding-small: 8px;
+    --on-primary: hsl(240, 100%, 98%);
+
+    --scroll-to-top-btn-width: 50px;
 }
 
 [data-theme="light"] {
-    --seperator: hsl(224, 15%, 45%);
-    --background: hsl(240, 100%, 98%);
+    --seperator: hsl(0, 0%, 30%);
+    --background: hsl(240, 20%, 90%);
     --text-primary: hsl(0, 0%, 0%);
     --text-secondary: hsl(0, 0%, 0%);
-    --pattern-slanted-line: hsl(205, 100%, 5%);
+    --pattern-slanted-line: hsl(0, 0%, 5%);
     --pattern-dots: hsl(0, 0%, 30%);
-    --navbar: hsl(240, 100%, 100%);
+    --navbar: hsl(240, 20%, 90%);
     --primary-btn: hsl(224, 87%, 60%);
-    --primary-btn-hover:  hsl(224, 87%, 70%);
-    --on-primary: hsl(240, 100%, 98%);
+    --primary-btn-hover: hsl(224, 87%, 70%);
+    --hover-outline: #005ce6;
 }
 
-[data-theme="dark"] { 
+[data-theme="dark"] {
     --seperator: hsl(235, 12%, 17%);
     --background: hsl(240, 100%, 2%);
     --text-primary: hsl(240, 100%, 98%);
     --text-secondary: hsl(240, 10%, 80%);
-    --pattern-slanted-line: hsl(205, 100%, 20%);
+    --pattern-slanted-line: hsl(216, 5%, 40%);
     --pattern-dots: hsl(216, 5%, 40%);
     --navbar: hsl(240, 10%, 10%);
     --primary-btn: hsl(224, 87%, 50%);
-    --primary-btn-hover:  hsl(224, 87%, 70%);
-    --on-primary: hsl(240, 100%, 98%);
+    --primary-btn-hover: hsl(224, 87%, 70%);
+    --hover-outline: #f5f5ffaf;
 }
 
 html::-webkit-scrollbar {
@@ -57,7 +60,6 @@ nav {
     justify-content: space-between;
     border-bottom: 1px solid var(--seperator);
     z-index: 10;
-    padding: 8px;
 
     background-color: var(--navbar);
 }
@@ -65,17 +67,22 @@ nav {
 #navbar-image {
     content: url(assets/navbar-image.gif);
     aspect-ratio: 1;
-    padding: 4px;
+    margin: 8px 16px;
     border-radius: 100px;
 }
 
 #theme-toggle {
+    display: flex;
     background-color: var(--navbar);
-    height: 100%;
+    height: calc(100% - 12px);
     aspect-ratio: 1;
     border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
     border: 0;
 }
+
 
 #theme-toggle:hover {
     background-color: var(--seperator);
@@ -84,12 +91,11 @@ nav {
 #navbar-links {
     display: none;
     height: 100%;
-    margin-left: 24px;
 }
 
 #navbar-links a {
     padding: 8px;
-    aspect-ratio: 2/0.8;
+    aspect-ratio: 2/0.9;
     text-decoration: none;
     text-align: center;
     align-content: center;
@@ -105,7 +111,7 @@ nav {
 #btn-scroll-to-top {
     display: flex;
     position: fixed;
-    width: 62px;
+    width: var(--scroll-to-top-btn-width);
     aspect-ratio: 1;
     right: 5vw;
     bottom: 5dvh;
@@ -214,25 +220,38 @@ section .content {
 }
 
 #connect-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10vw;
 }
 
 .connect-option {
     display: flex;
-    padding: 8px 0;
-    gap: 8px;
+    width: 100%;
+    aspect-ratio: 16/9;
     align-items: center;
-}
-
-.connect-option .icon {
-    display: flex;
-    width: 40px;
-    aspect-ratio: 1;
     justify-content: center;
     align-items: center;
-    background-color: var(--navbar);
+    border: 1px solid var(--seperator);
+    font-size: clamp(1.2rem, calc(1vw + 1rem), 1.6rem);
+}
+
+.connect-option:hover {
+    border-color: var(--hover-outline);
+}
+
+.connect-option a:hover {
+    color: var(--hover-outline);
+    font-weight: 400;
+}
+
+.connect-option a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 #greeting-text {
@@ -275,7 +294,6 @@ section::before {
     width: 10vw;
     height: 100%;
     left: 0;
-    background-color: #1C58FE;
     -webkit-mask-image: url('assets/pattern_slanted_lines.svg');
     mask-image: url('assets/pattern_slanted_lines.svg');
     -webkit-mask-repeat: repeat;
@@ -287,7 +305,7 @@ section::before {
     opacity: 0.5;
 
     /* color for your pattern */
-    background-color: var(--pattern-dots);
+    background-color: var(--pattern-slanted-line);
 }
 
 section::after {
@@ -296,7 +314,6 @@ section::after {
     width: 10vw;
     height: 100%;
     right: 0;
-    background-color: #1C58FE;
     -webkit-mask-image: url('assets/pattern_slanted_lines.svg');
     mask-image: url('assets/pattern_slanted_lines.svg');
     -webkit-mask-repeat: repeat;
@@ -308,7 +325,7 @@ section::after {
     opacity: 0.5;
 
     /* color for your pattern */
-    background-color: var(--pattern-dots);
+    background-color: var(--pattern-slanted-line);
 }
 
 .patterned-bg::before {
@@ -333,9 +350,36 @@ section::after {
     background-color: var(--pattern-dots);
 }
 
-@media (min-width:1000px) {
+@media (min-width:900px) {
+    #extra-text {
+        word-wrap: normal;
+        padding-right: 45%;
+    }
 
+    #navbar-links {
+        display: flex;
+    }
+}
+
+@media (min-width:1000px) {
     #projects-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #connect-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width:1200px) {
+    section .section-title {
+        writing-mode: horizontal-tb;
+        padding-right: 8px;
+    }
+
+
+    #connect-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }

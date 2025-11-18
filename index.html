@@ -11,9 +11,7 @@
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400&family=Space+Grotesk:wght@400;700&display=swap">
 
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_upward_alt,dark_mode,light_mode,mail" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&icon_names=arrow_upward_alt,dark_mode,light_mode,mail" />
 
         <script src="js/main.js"></script>
         <script src="js/theme-toggle.js"></script>
@@ -27,13 +25,13 @@
         <nav>
             <div id="navbar-image" width="50px" height="50px"></div>
             <div style="display: flex; align-items: center;">
-                <button type="button" id="theme-toggle" >
+                <button type="button" id="theme-toggle">
                     <span class="material-symbols-outlined" id="theme-toggle-icon">light_mode</span>
                 </button>
                 <div id="navbar-links">
-                    <a href="#about-me">About Me</a>
-                    <a href="#Projects">Projects</a>
-                    <a href="#Connect">Connect</a>
+                    <a href="#about-me-section">About Me</a>
+                    <a href="#projects-section">Projects</a>
+                    <a href="#connect-section">Connect</a>
                 </div>
             </div>
         </nav>
@@ -43,7 +41,7 @@
             <div id="vertical-pattern"></div>
         </div>
 
-        <section id="section-one no-margin">
+        <section id="section-one">
             <div class="content">
                 <h2 id="greeting-text">Hey There! I Am</h2>
                 <h1 id="name">Jayesh Khare</h1>
@@ -92,20 +90,23 @@
             </div>
         </section>
 
-        <section>
+        <section id="connect-section">
             <div class="section-title">Connect</div>
-            <div class="content">
-                <div id="connect-container">
+            <div class="content" id="connect-container">
+                <div class="connect-option" id="mail">
+                    <a target="_blank" href="@emailMeBeach">Email Me!</a>
+                </div>
 
-                    <div class="connect-option" id="mail">
-                        <div class="icon"><span class="material-symbols-outlined">mail</span></div>
-                        <div class="link">Email Me!</div>
-                    </div>
+                <div class="connect-option" id="linked-in">
+                    <a target="_blank" href="https://www.linkedin.com/in/jayesh-khare">Linked In</a>
+                </div>
 
-                    <div class="connect-option" id="linked-in">
-                        <div class="icon"><i class="bi bi-linkedin"></i></div>
-                        <div class="link">Visit Profile</div>
-                    </div>
+                <div class="connect-option" id="linked-in">
+                    <a target="_blank" href="https://dribbble.com/1_Jammy">Dribbble</a>
+                </div>
+
+                <div class="connect-option" id="linked-in">
+                    <a target="_blank" href="https://www.behance.net/jayeshkhare">Behance</a>
                 </div>
             </div>
         </section>

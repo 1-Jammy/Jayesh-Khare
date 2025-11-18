@@ -28,4 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // Get all navigation links
+    document.querySelectorAll('#navbar-links a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get the target section
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Get navbar height
+                const navbarHeight = document.querySelector('nav').offsetHeight;
+
+                // Calculate scroll position
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 100;
+
+                // Perform smooth scroll
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 });
